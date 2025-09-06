@@ -43,17 +43,15 @@ def plot_probabilistic_forecast(
 
 
 # 1. Load Model and Tokenizer
-# tokenizer = WindFMTokenizer.from_pretrained("NeoQuasar/WindFM-Tokenizer")
-# model = WindFM.from_pretrained("NeoQuasar/WindFM")
-tokenizer = WindFMTokenizer.from_pretrained("/data/shiyu/WindFM/model/WindFM-Tokenizer")
-model = WindFM.from_pretrained("/data/shiyu/WindFM/model/WindFM")
+tokenizer = WindFMTokenizer.from_pretrained("NeoQuasar/WindFM-Tokenizer")
+model = WindFM.from_pretrained("NeoQuasar/WindFM")
 
 # 2. Instantiate Predictor
 predictor = WindFMPredictor(model, tokenizer, device="cuda:0", max_context=512, clip=5)
 
 # 3. Prepare Data
 df = pd.read_csv("./data/121522.csv")
-df['time'] = pd.to_datetime(df['time'])
+df['time'] = pd.to_datetime(df['time'], utc=True)
 
 lookback = 240
 pred_len = 80

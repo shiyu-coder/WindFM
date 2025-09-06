@@ -84,8 +84,19 @@ predictor = WindFMPredictor(model, tokenizer, device="cuda:0", max_context=1024)
 # === Step 3: Prepare Your Data ===
 # Load your own time series data. The dataframe must contain a 'power' column
 # and the relevant weather features.
+
+# ---------------------------------------------------------------------------------
+# >> A Note on Timestamps (UTC is Required) <<
+#
+# To maintain temporal consistency and correctly interpret time-dependent 
+# patterns (like diurnal cycles) across different geographical locations, all 
+# timestamp data fed into the model must be in Coordinated Universal Time (UTC).
+#
+# During pre-training, all time information was standardized to UTC. Using a single,
+# unified timezone prevents ambiguity and is critical for the model's performance.
+# ---------------------------------------------------------------------------------
 df = pd.read_csv("./data/sample_wind_farm_data.csv")
-df['time'] = pd.to_datetime(df['time'])
+df['time'] = pd.to_datetime(df['time'], utc=True)
 
 # Define the historical context and the forecast horizon
 lookback = 240
