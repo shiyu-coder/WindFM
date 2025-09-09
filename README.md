@@ -160,9 +160,19 @@ A complete, runnable script with data loading and plotting is available in [`exa
 
 ## 📖 Citation
 
-If you find WindFM useful in your research, we kindly ask that you cite our paper. 
+If you find WindFM useful in your research, we kindly ask that you cite our [paper](https://arxiv.org/abs/2509.06311). 
 
-Paper coming soon!
+```
+@misc{fan2025windfm,
+      title={WindFM: An Open-Source Foundation Model for Zero-Shot Wind Power Forecasting}, 
+      author={Hang Fan and Yu Shi and Zongliang Fu and Shuo Chen and Wei Wei and Wei Xu and Jian Li},
+      year={2025},
+      eprint={2509.06311},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2509.06311}, 
+}
+```
 
 ## 📜 License
 This project is licensed under the [MIT License](./LICENSE).
