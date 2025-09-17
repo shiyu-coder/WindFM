@@ -25,6 +25,7 @@
 > **WindFM** is the first open-source foundation model designed for wind power forecasting. Pre-trained on a massive dataset of **~150 billion time steps** from **126,000 sites**, it learns a universal representation of wind generation dynamics to deliver state-of-the-art **zero-shot** wind power predictions.
 
 ## 📰 News
+*   🚩 **[2025.9.8]** Our paper is now available on [arXiv](https://arxiv.org/abs/2509.06311)!
 *   🚩 **[2025.9.5]** We have released the pre-trained WindFM [model](https://huggingface.co/NeoQuasar/WindFM) and [tokenizer](https://huggingface.co/NeoQuasar/WindFM-Tokenizer) on HuggingFace!
 
 ## ✨ Why WindFM?
